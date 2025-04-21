@@ -1,0 +1,56 @@
+## Interface: 11200
+## Title: Dungeons & Turtles
+## Notes: Tools for Dungeon Masters to run D&D campaigns in Turtle WoW
+## Author: Claude AI
+## Version: 1.0.0
+## SavedVariables: DMsToolkitDB
+## OptionalDeps: TotalRP3
+## X-Website: https://github.com/ketamai/dungeons-and-turtles
+## X-Category: Role Playing
+## X-License: MIT
+
+# Libraries
+Libs\LibStub\LibStub.lua
+Libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
+Libs\AceLibrary\AceLibrary.lua
+Libs\AceOO-2.0\AceOO-2.0.lua
+Libs\AceEvent-2.0\AceEvent-2.0.lua
+Libs\AceDB-2.0\AceDB-2.0.lua
+Libs\AceConsole-2.0\AceConsole-2.0.lua
+Libs\AceAddon-2.0\AceAddon-2.0.lua
+Libs\AceHook-2.1\AceHook-2.1.lua
+
+# Core Files
+Core\Constants.lua
+Core\Database.lua
+Core\Core.lua
+
+# Modules
+Modules\CampaignManager.lua
+Modules\PlayerTracker.lua
+Modules\EventTrigger.lua
+Modules\MapIntegration.lua
+Modules\ChatChannel.lua
+Modules\NarrativeTools.lua
+
+# UI Templates
+UI\Templates.xml
+
+# UI Frames
+UI\MainFrame.xml
+UI\MainFrame.lua
+UI\CampaignFrame.xml
+UI\CampaignFrame.lua
+UI\PlayerFrame.xml
+UI\PlayerFrame.lua
+UI\EventFrame.xml
+UI\EventFrame.lua
+UI\MapFrame.xml
+UI\MapFrame.lua
+UI\ChatFrame.xml
+UI\ChatFrame.lua
+UI\NarrativeFrame.xml
+UI\NarrativeFrame.lua
+
+# Main File
+Dungeons_and_Turtles.lua

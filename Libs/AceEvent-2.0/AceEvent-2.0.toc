@@ -1,0 +1,10 @@
+## Interface: 11200
+## Title: Lib: AceEvent-2.0
+## Notes: AddOn development framework
+## Author: Ace Development Team
+## X-Category: Library
+## X-License: LGPL v2.1 + MIT for AceOO-2.0
+## X-Website: http://www.wowace.com
+## Dependencies: AceLibrary, AceOO-2.0
+
+AceEvent-2.0.lua
