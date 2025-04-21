@@ -1,0 +1,127 @@
+<![CDATA[<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
+    <Script file="MainFrame.lua"/>
+    
+    <Frame name="DTMainFrame" parent="UIParent" enableMouse="true" movable="true" hidden="true" inherits="DTPanelTemplate">
+        <Size>
+            <AbsDimension x="800" y="600"/>
+        </Size>
+        <Anchors>
+            <Anchor point="CENTER"/>
+        </Anchors>
+        
+        <!-- Title Bar -->
+        <Frames>
+            <Frame name="$parentTitleBar">
+                <Size>
+                    <AbsDimension x="780" y="30"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                            <AbsDimension x="10" y="-10"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="ARTWORK">
+                        <FontString name="$parentTitle" inherits="GameFontNormalLarge" text="Dungeons &amp; Turtles">
+                            <Anchors>
+                                <Anchor point="LEFT">
+                                    <Offset>
+                                        <AbsDimension x="5" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </Frame>
+            
+            <!-- Close Button -->
+            <Button name="$parentCloseButton" inherits="UIPanelCloseButton">
+                <Anchors>
+                    <Anchor point="TOPRIGHT">
+                        <Offset>
+                            <AbsDimension x="-5" y="-5"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
+            
+            <!-- Tab Buttons -->
+            <Button name="$parentTab1" inherits="DTTabButtonTemplate" text="Campaign">
+                <Anchors>
+                    <Anchor point="BOTTOMLEFT" relativeTo="$parentTitleBar" relativePoint="BOTTOMLEFT">
+                        <Offset>
+                            <AbsDimension x="5" y="-20"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
+            
+            <Button name="$parentTab2" inherits="DTTabButtonTemplate" text="Players">
+                <Anchors>
+                    <Anchor point="LEFT" relativeTo="$parentTab1" relativePoint="RIGHT">
+                        <Offset>
+                            <AbsDimension x="-15" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
+            
+            <Button name="$parentTab3" inherits="DTTabButtonTemplate" text="Events">
+                <Anchors>
+                    <Anchor point="LEFT" relativeTo="$parentTab2" relativePoint="RIGHT">
+                        <Offset>
+                            <AbsDimension x="-15" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
+            
+            <Button name="$parentTab4" inherits="DTTabButtonTemplate" text="Map">
+                <Anchors>
+                    <Anchor point="LEFT" relativeTo="$parentTab3" relativePoint="RIGHT">
+                        <Offset>
+                            <AbsDimension x="-15" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
+            
+            <Button name="$parentTab5" inherits="DTTabButtonTemplate" text="Chat">
+                <Anchors>
+                    <Anchor point="LEFT" relativeTo="$parentTab4" relativePoint="RIGHT">
+                        <Offset>
+                            <AbsDimension x="-15" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
+            
+            <Button name="$parentTab6" inherits="DTTabButtonTemplate" text="Narrative">
+                <Anchors>
+                    <Anchor point="LEFT" relativeTo="$parentTab5" relativePoint="RIGHT">
+                        <Offset>
+                            <AbsDimension x="-15" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
+        </Frames>
+        
+        <Scripts>
+            <OnLoad>
+                self:RegisterForDrag("LeftButton")
+                self.selectedTab = 1
+                DT.UI:OnMainFrameLoad(self)
+            </OnLoad>
+            <OnDragStart>
+                self:StartMoving()
+            </OnDragStart>
+            <OnDragStop>
+                self:StopMovingOrSizing()
+            </OnDragStop>
+        </Scripts>
+    </Frame>
+</Ui>]]>
