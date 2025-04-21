@@ -1,0 +1,136 @@
+<![CDATA[<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
+    <!-- Button Template -->
+    <Button name="DTButtonTemplate" virtual="true">
+        <Size>
+            <AbsDimension x="100" y="22"/>
+        </Size>
+        <NormalFont style="GameFontNormal"/>
+        <HighlightFont style="GameFontHighlight"/>
+        <DisabledFont style="GameFontDisable"/>
+        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+            <TexCoords left="0" right="0.625" top="0" bottom="0.6875"/>
+        </NormalTexture>
+        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+            <TexCoords left="0" right="0.625" top="0" bottom="0.6875"/>
+        </PushedTexture>
+        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+            <TexCoords left="0" right="0.625" top="0" bottom="0.6875"/>
+        </DisabledTexture>
+        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+            <TexCoords left="0" right="0.625" top="0" bottom="0.6875"/>
+        </HighlightTexture>
+    </Button>
+
+    <!-- Panel Template -->
+    <Frame name="DTPanelTemplate" virtual="true">
+        <Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+            <BackgroundInsets>
+                <AbsInset left="11" right="12" top="12" bottom="11"/>
+            </BackgroundInsets>
+            <TileSize>
+                <AbsValue val="32"/>
+            </TileSize>
+            <EdgeSize>
+                <AbsValue val="32"/>
+            </EdgeSize>
+        </Backdrop>
+    </Frame>
+
+    <!-- Tab Button Template -->
+    <Button name="DTTabButtonTemplate" virtual="true">
+        <Size>
+            <AbsDimension x="115" y="24"/>
+        </Size>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentLeftDisabled" file="Interface\PaperDollInfoFrame\UI-Character-ActiveTab">
+                    <Size>
+                        <AbsDimension x="20" y="24"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT"/>
+                    </Anchors>
+                    <TexCoords left="0" right="0.15625" top="0" bottom="1.0"/>
+                </Texture>
+                <Texture name="$parentMiddleDisabled" file="Interface\PaperDollInfoFrame\UI-Character-ActiveTab">
+                    <Size>
+                        <AbsDimension x="88" y="24"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeTo="$parentLeftDisabled" relativePoint="RIGHT"/>
+                    </Anchors>
+                    <TexCoords left="0.15625" right="0.84375" top="0" bottom="1.0"/>
+                </Texture>
+                <Texture name="$parentRightDisabled" file="Interface\PaperDollInfoFrame\UI-Character-ActiveTab">
+                    <Size>
+                        <AbsDimension x="20" y="24"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeTo="$parentMiddleDisabled" relativePoint="RIGHT"/>
+                    </Anchors>
+                    <TexCoords left="0.84375" right="1.0" top="0" bottom="1.0"/>
+                </Texture>
+            </Layer>
+        </Layers>
+        <ButtonText name="$parentText">
+            <Anchors>
+                <Anchor point="CENTER">
+                    <Offset>
+                        <AbsDimension x="0" y="2"/>
+                    </Offset>
+                </Anchor>
+            </Anchors>
+        </ButtonText>
+        <NormalFont style="GameFontNormalSmall"/>
+        <HighlightFont style="GameFontHighlightSmall"/>
+        <DisabledFont style="GameFontHighlightSmall"/>
+        <HighlightTexture file="Interface\PaperDollInfoFrame\UI-Character-Tab-Highlight" alphaMode="ADD">
+            <Size>
+                <AbsDimension x="5" y="24"/>
+            </Size>
+            <Anchors>
+                <Anchor point="CENTER">
+                    <Offset>
+                        <AbsDimension x="0" y="2"/>
+                    </Offset>
+                </Anchor>
+            </Anchors>
+        </HighlightTexture>
+    </Button>
+
+    <!-- List Item Template -->
+    <Button name="DTListItemTemplate" virtual="true">
+        <Size>
+            <AbsDimension x="325" y="16"/>
+        </Size>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <FontString name="$parentText" inherits="GameFontNormal" justifyH="LEFT">
+                    <Size>
+                        <AbsDimension x="300" y="14"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT">
+                            <Offset>
+                                <AbsDimension x="5" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Scripts>
+            <OnEnter>
+                if self.tooltipText then
+                    GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+                    GameTooltip:SetText(self.tooltipText)
+                    GameTooltip:Show()
+                end
+            </OnEnter>
+            <OnLeave>
+                GameTooltip:Hide()
+            </OnLeave>
+        </Scripts>
+        <HighlightTexture file="Interface\QuestFrame\UI-QuestTitleHighlight" alphaMode="ADD"/>
+    </Button>
+</Ui>]]>
